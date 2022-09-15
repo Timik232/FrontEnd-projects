@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    color:azure;
+}
+.background{
+    width=100%;
+    min-height:100vh;
+    background: linear-gradient(180deg,#c7edff,rgba(255,255,255,0) 100%), #ebf0ff;
+}
+.shapka{
+    padding: 1em;
+}
+.shapka__logo{
+    margin-bottom: 3em;
+    padding:1em;
+}
+.shapka__blocks{
+    justify-content:space-between;
+    display:flex;
+}
+.shapka__blocks__item{
+text-align: center;
+background: #8dacbb;
+padding: 3.5em;
+border-radius: 13px;
+}
+.main__series{
+
+}
+.images__item{
+border:1em;
+border-style: solid;
+background: #8dacbb;
+}
+.textbox{
+
+}
+.text__photo{
+    
+}
+.dungeon{
+background: #51778a;
+padding:2em;
+position: fixed; 
+left: 0; bottom: 0;
+width:100%;
+}
+.boxtext{
+
+}
