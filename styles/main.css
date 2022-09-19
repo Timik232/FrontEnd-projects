@@ -3,8 +3,11 @@
     margin: 0;
     color:azure;
 }
+html{
+    font-family: 'Merriweather', sans-serif;
+}
 .background{
-    width=100%;
+    width:100%;
     min-height:100vh;
     background: linear-gradient(180deg,#c7edff,rgba(255,255,255,0) 100%), #ebf0ff;
 }
@@ -12,18 +15,34 @@
     padding: 1em;
 }
 .shapka__logo{
-    margin-bottom: 3em;
+    justify-content: left;
+    display:flex;
     padding:1em;
 }
+.logotext{
+    margin-top: 15px;
+    margin-left: 8px;
+    font-size: 50px;
+    color:#2e4550;
+}
+.image__logo{
+    padding:2em;
+    }
 .shapka__blocks{
-    justify-content:space-between;
+    justify-content:center;
     display:flex;
+    background-color: #568399;
+    padding: 0.6em;
+    border-radius: 13px;
+    /*position: fixed;
+    width: 100%;*/
 }
 .shapka__blocks__item{
-text-align: center;
-background: #8dacbb;
-padding: 3.5em;
-border-radius: 13px;
+    text-align: center;
+    background: #8dacbb;
+    padding: 0.5em;
+    margin-right: 3em;
+    border-radius: 13px;
 }
 .main__series{
 
@@ -42,10 +61,16 @@ background: #8dacbb;
 .dungeon{
 background: #51778a;
 padding:2em;
-position: fixed; 
+position:absolute;
 left: 0; bottom: 0;
 width:100%;
 }
 .boxtext{
 
+}
+
+.camera{
+    background-size:64px;
+    background-image: url("../images/camera.png");
+    background-repeat: no-repeat;
 }
