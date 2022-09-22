@@ -6,6 +6,8 @@
 html{
     font-family: 'Merriweather', sans-serif;
 }
+a { text-decoration: none;  }
+a:hover { text-decoration: underline; }
 .background{
     width:100%;
     min-height:100vh;
@@ -26,7 +28,7 @@ html{
     color:#2e4550;
 }
 .image__logo{
-    padding:2em;
+    /*padding:2em;*/
     }
 .shapka__blocks{
     justify-content:center;
@@ -69,8 +71,12 @@ width:100%;
 
 }
 
-.camera{
+/*.camera{
     background-size:64px;
     background-image: url("../images/camera.png");
     background-repeat: no-repeat;
+}*/
+#verysmall{
+    font-size: 10px;
 }
+
