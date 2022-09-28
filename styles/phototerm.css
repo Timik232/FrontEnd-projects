@@ -1,3 +1,17 @@
-.Terms{
+
+#Definition{
+  font-size: 24px;
+  /*text-align: center;*/
+}
+#Definition dt{
     color:navy;
+}
+#Definition dd{
+  color: purple;
+}
+#Definition h2{
+  color: black;
+}
+#Definition img{
+  float: left;
 }

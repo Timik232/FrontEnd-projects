@@ -58,13 +58,16 @@ background: #8dacbb;
 
 }
 .text__photo{
-    
+
 }
 .dungeon{
 background: #51778a;
 padding:2em;
-position:absolute;
+position:sticky;
 left: 0; bottom: 0;
+text-align: center;
+right: 0;
+/*position: fixed;*/
 width:100%;
 }
 .boxtext{
@@ -79,4 +82,3 @@ width:100%;
 #verysmall{
     font-size: 10px;
 }
-
