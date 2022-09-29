@@ -30,21 +30,50 @@ a:hover { text-decoration: underline; }
 .image__logo{
     /*padding:2em;*/
     }
-.shapka__blocks{
-    justify-content:center;
-    display:flex;
-    background-color: #568399;
-    padding: 0.6em;
+.navbar
+{
+    width: 96%;
+    height: 70px;
+    margin: auto;
+    background: #568399;
     border-radius: 13px;
+}
+.navbar .shapka__blocks{
+    height: inherit;
+    width: inherit;
+    display:flex;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    justify-content:center;
+
     /*position: fixed;
     width: 100%;*/
 }
 .shapka__blocks__item{
     text-align: center;
+    height: 35px;
     background: #8dacbb;
     padding: 0.5em;
-    margin-right: 3em;
     border-radius: 13px;
+}
+
+.elements{
+    flex-flow: row nowrap;
+    list-style-type: none;
+    /* justify-content:space-between; */
+}
+.elements li{
+    display: inline-block;
+    margin-right: 1em;
+}
+.elements li a{
+    display: inline-block;
+    transition: all 0.25s ease-in-out;
+}
+.elements li a:hover{
+    color:#6e8de2;
+    text-decoration: none;
 }
 .main__series{
 
@@ -65,8 +94,7 @@ background: #51778a;
 padding:2em;
 position:sticky;
 left: 0; bottom: 0;
-text-align: center;
-right: 0;
+text-align: left;
 /*position: fixed;*/
 width:100%;
 }

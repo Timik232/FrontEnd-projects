@@ -15,3 +15,7 @@
 #Definition img{
   float: left;
 }
+.fon{
+  position: fixed;
+  background-color: brown;
+}
