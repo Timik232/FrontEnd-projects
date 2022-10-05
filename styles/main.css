@@ -84,15 +84,15 @@ border-style: solid;
 background: #8dacbb;
 }
 .textbox{
-
+text-align: center;
 }
-.text__photo{
-
+.textbox p{
+color:black;
 }
 .dungeon{
 background: #51778a;
 padding:2em;
-position:sticky;
+height: 10px;
 left: 0; bottom: 0;
 text-align: left;
 /*position: fixed;*/

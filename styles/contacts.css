@@ -1,0 +1,50 @@
+.main__contact{
+  width: 80%;
+  background: #568399;
+  border-radius: 2em;
+  margin: auto;
+  padding: 1em;
+  margin-bottom: 1em;
+  line-height: 1.6em;
+}
+.vkid a::after{
+  content: attr(href);
+}
+.contact__text{
+  text-align: center;
+
+}
+.contact__text ul{
+  list-style-type: none;
+}
+#send input{
+  text-align: center;
+}
+/*sendMessage::placeholder {
+  color: blue;
+  font-size: 1.5em;
+  font-style: italic;
+}*/
+
+#name {
+  color:black;
+}
+#mail {
+  color:black;
+}
+#phone{
+  color:black;
+}
+#message{
+  color:black;
+}
+#topic{
+  color:black;
+}
+#topic option{
+  color:black;
+  text-align: center;
+}
+button{
+  color: black;
+}
