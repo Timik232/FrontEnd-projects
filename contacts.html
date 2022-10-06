@@ -79,23 +79,27 @@
                       </ul><br>
                       <form action="" method="get" class="sendMessage">
                         <fieldset id="send">
-                          <legend>Отправить письмо</legend>
-                          <label for="name">Имя и фамилия</label>
-                          <input type="text" id="name"  required minlength="3" placeholder="Тимур Комолов"><br>
+                          <legend id="legsend">Отправить письмо</legend>
+                          <label for="name">Имя и фамилия</label><br>
+                          <div class="inp"><input type="text" id="name"  required minlength="3" placeholder="Тимур Комолов"></div>
                           <label for="mail">Email</label>
-                          <input type="email" name="mail" id="mail" placeholder="komolov.timurka@mail.ru" required minlength="4"><br>
+                          <div class="inp"><input type="email" name="mail" id="mail" placeholder="komolov.timurka@mail.ru" required minlength="4"></div>
                           <label for="phone">Номер телефона(необязательно):</label>
-                          <input type="tel" name="phone" id="phone" placeholder="+7-900-000-00-00"><br>
+                          <div class="inp"><input type="tel" name="phone" id="phone" placeholder="+7-900-000-00-00"></div>
+                          <label for="vk">Ссылка на вк (необязательно):</label>
+                          <div class="inp"><input type="url" name="vk" id="vk" placeholder="https://vk.com/timik232"></div>
+                          <label for="tovk">Отвечать в вк?   </label>
+                          <input type="checkbox" name="tovk" id="tovk"><br>
                           <label for="message">Сообщение</label>
-                          <textarea id="message" name="message" placeholder="Введите сообщение" rows="10" cols="30" required minlength="10" maxlength="5000"></textarea><br>
-                          <label for="purpose">Тема сообщения</label>
-                          <select name="topic" id="topic" autofocus>
+                          <div class="inp"><textarea id="message" name="message" placeholder="Введите сообщение" rows="10" cols="70" required minlength="10" maxlength="5000"></textarea></div>
+                          <label for="purpose">Тема сообщения</label><br>
+                          <select name="topic" id="topic" autofocus required>
                             <option value=""> -- Выберите тему сообщения -- </option>
                             <option value="question">Задать вопрос</option>
                             <option value="photo">Заказать съёмку</option>
                             <option value="opinion">Спросить совета</option>
                             <option value="other">Другое</option>
-                          </select><br>
+                          </select><br>        
                           <button type="submit">Отправить</button>
                         </fieldset>
                       </form>

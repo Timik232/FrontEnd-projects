@@ -4,7 +4,7 @@
   border-radius: 2em;
   margin: auto;
   padding: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 5em;
   line-height: 1.6em;
 }
 .vkid a::after{
@@ -12,7 +12,12 @@
 }
 .contact__text{
   text-align: center;
-
+}
+#legsend{
+  text-align: center;
+}
+.inp{
+  text-align: center;
 }
 .contact__text ul{
   list-style-type: none;
@@ -20,12 +25,17 @@
 #send input{
   text-align: center;
 }
+#send input:focus{
+font-style: italic;
+}
 /*sendMessage::placeholder {
   color: blue;
   font-size: 1.5em;
   font-style: italic;
 }*/
-
+#tovk{
+  margin-left: 1em;
+}
 #name {
   color:black;
 }
@@ -37,6 +47,7 @@
 }
 #message{
   color:black;
+  resize:none;
 }
 #topic{
   color:black;
@@ -47,4 +58,12 @@
 }
 button{
   color: black;
+  width: 15em;
+  height: 2em;
+  margin: 1em;
+}
+fieldset{
+  border:1spx;
+  border-style: dashed;
+  border-radius: 10em;
 }
