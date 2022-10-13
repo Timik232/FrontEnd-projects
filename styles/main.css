@@ -17,6 +17,7 @@ a:hover { text-decoration: underline; }
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 #menu-toggle {
@@ -33,6 +34,7 @@ a:hover { text-decoration: underline; }
   width: 30px;
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
+  z-index: 2;
 }
 
 .menu-button::before {
@@ -64,14 +66,16 @@ a:hover { text-decoration: underline; }
 
 @media only screen and (max-width: 800px){
 
-  .shapka__blocks{    
+.shapka__blocks{    
   visibility: hidden;
- 
 }
-
   .menu-button-container {
       display: flex;
+      z-index: 2;
     }
+  .menu-toggle{
+    z-index: 2;
+  }
   .navbar{
     position: absolute;
     top: 0;
@@ -84,6 +88,7 @@ a:hover { text-decoration: underline; }
 
   }
   #menu-toggle ~ .elements li {
+   z-index: 1;
    height: 0;
    margin: 0;
    padding: 0;
@@ -91,20 +96,21 @@ a:hover { text-decoration: underline; }
    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
  }
  #menu-toggle:checked ~ .shapka__blocks{ 
-   visibility: visible;
+  visibility: visible;
    
  }
+ 
  #menu-toggle:checked ~ .elements li {
    border: 1px solid #333;
    height: 2.5em;
    padding: 0.5em;
    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-
+   z-index: 1;
  }
  .elements{
   border-radius: 30px;
-  border: 1px solid black;
-  box-shadow:  0 0 6px rgba(0,0,0,0.3);
+  border: 1.5px solid #333;
+  /* box-shadow:  0 0 6px rgba(0,0,0,0.3); */
  }
  .elements li:last-child{
    border-bottom-left-radius: 30px;
@@ -122,7 +128,9 @@ a:hover { text-decoration: underline; }
    width: 100%;
    color: white;
    background-color: #568399;
+   opacity: 98%;
    text-align: center;
+   z-index: 1;
  }
  .elements > li:not(:last-child) {
    border-bottom: 1px solid #444;
@@ -147,11 +155,9 @@ a:hover { text-decoration: underline; }
     font-size: 50px;
     color:#2e4550;
 }
-.image__logo{
-    /*padding:2em;*/
-    }
 .navbar
 {
+    z-index: 1;
     width: 96%;
     height: 70px;
     margin: auto;
@@ -160,6 +166,7 @@ a:hover { text-decoration: underline; }
     position:relative;
 }
 .navbar .shapka__blocks{
+    z-index: 1;
     height: inherit;
     width: inherit;
     display:flex;
@@ -172,6 +179,7 @@ a:hover { text-decoration: underline; }
     width: 100%;*/
 }
 .shapka__blocks__item{
+    z-index: 1;
     text-align: center;
     height: 35px;
     background: #8dacbb;
@@ -180,7 +188,7 @@ a:hover { text-decoration: underline; }
 }
 .shapka__blocks__item:hover{
     background-color: #6e8de2;
-    text-decoration:underline;
+    text-decoration:none;
     display: inline-block;
     transition: all 0.20s ease-in-out;
 }
@@ -196,7 +204,9 @@ a:hover { text-decoration: underline; }
 }
 .elements li{
     display: inline-block;
-    margin-right: 1em;
+  }
+.elements li:not(:last-child){
+  margin-right: 1em;
 }
 .elements li a{
     display: inline-block;
@@ -212,7 +222,9 @@ a:hover { text-decoration: underline; }
   border-radius: 2em;
   margin: auto;
   padding: 1em;
-  margin-bottom: 5em;
+  margin-bottom: 2.5em;
+  margin-top: 2.5em;
+  /* margin-bottom: 5em; */
   line-height: 1.6em;
 }
 .images__item{
@@ -235,12 +247,16 @@ line-height: 2em;
 }
 .dungeon{
 background: #51778a;
-padding:2em;
+padding-top:1em;
+padding-bottom: 1em;
 height: 10px;
 left: 0; bottom: 0;
 text-align: left;
 /* position: fixed; */
 width:100%;
+}
+.boxtext{
+  padding-left: 1em;
 }
 
 #verysmall{
