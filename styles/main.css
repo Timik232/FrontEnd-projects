@@ -58,6 +58,7 @@ a:hover { text-decoration: underline; }
   margin-top: 0px;
   transform: rotate(-405deg);
 }
+
 @media only screen and (max-width: 800px){
 .shapka__blocks{
   visibility: hidden;
@@ -99,7 +100,8 @@ a:hover { text-decoration: underline; }
    padding: 0.5em 0;
    width: 100%;
    color: white;
-   background-color: #222;
+   background-color: #568399;
+   text-align: center;
  }
  .elements > li:not(:last-child) {
    border-bottom: 1px solid #444;
