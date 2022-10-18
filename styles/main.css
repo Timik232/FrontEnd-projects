@@ -185,6 +185,7 @@ a:hover { text-decoration: underline; }
     z-index: 1;
     text-align: center;
     height: 35px;
+    /* min-height: 2em; */
     background: #8dacbb;
     padding: 0.5em;
     border-radius: 13px;
@@ -239,25 +240,68 @@ color:azure;
 font-size: 1.5em;
 line-height: 2em;
 }
-.textbox img{
-  height:40vw;
-  min-height:40vw;
-  width:auto;
-}
-.d7200{
+
+.text__d7200{
   position: relative;
   height: 40vw;
+  min-height:10em;
   width: auto;
+  display:inline-block;
+  z-index: 1;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: -3px 5px 10px rgb(2, 50, 79);
 }
-.d7200:hover .text__d7200{
-    width:inherit;
-    visibility: visible;
-    opacity:100%;
+.text__d7200:before {
+display: block;
+background-color: rgb(0, 0, 0);
+content: "";
+height: 100%;
+opacity: 0;
+position: absolute;
+width: 100%;
+z-index: 2;
 }
-.text__d7200{
-  visibility: hidden;
-  opacity:0%;
-  transition: opacity .2s, visibility .2s;
+.text__d7200:after {
+font-family: 'Lucida Console';
+color: white;
+content: attr(camera-description);
+display: block;
+font-size: 1em;
+text-shadow: rgb(2, 50, 79) -2px 5px 5px;
+opacity: 0;
+padding: 0 3%;
+position: absolute;
+text-transform: none;
+top: 50%;
+-webkit-transform-origin: 50% 0%;
+transform-origin: 50% 0%;
+-webkit-transform: scale(0) translateY(-50%);
+transform: scale(0) translateY(-50%);
+width: 94%;
+z-index: 3;
+}
+.text__d7200:after {
+-webkit-transition: all 350ms ease-in-out;
+transition: all 350ms ease-in-out;
+}
+.text__d7200:hover:before {
+opacity: 0.6;
+}
+
+.text__d7200:hover:after {
+opacity: 1;
+-webkit-transform: scale(1) translateY(-50%);
+transform: scale(1) translateY(-50%);
+}
+.text__d7200 img{
+  display: block;
+  height:40vw;
+  min-height:10em;
+  width:auto;
+  box-shadow: -3px 5px 10px rgb(2, 50, 79);
+  z-index:1;
 }
 .dungeon{
 background: #51778a;
@@ -269,7 +313,7 @@ text-align: left;
 /* position: fixed; */
 width:100%;
 }
-.boxtext{
+.dungeon__text{
   padding-left: 1em;
 }
 
