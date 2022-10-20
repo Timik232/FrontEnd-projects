@@ -189,18 +189,32 @@ a:hover { text-decoration: underline; }
     background: #8dacbb;
     padding: 0.5em;
     border-radius: 13px;
-    box-shadow: -1px 3px 10px #495c90; /* вдавливание */
-    /* box-shadow: 5px 5px 0px rgb(65, 32, 130); */
+    /*box-shadow: -1px 3px 10px #495c90; /* вдавливание */
+    box-shadow: 5px 5px 0px rgb(65, 32, 130);
+    border: 1px solid black;
 }
 .shapka__blocks__item:hover{
     background-color: #6e8de2;
     text-decoration:none;
     display: inline-block;
-    transition: all 0.20s ease-in-out;
-    box-shadow: 0px 0px 5px rgb(114, 100, 142),
-    0px 0px 5px #495c90 inset;
-    /* box-shadow:5px 5px 0px rgb(65, 32, 130) inset,
-    0px 0px 5px #3a0f4e inset; */ /* вдавливание */
+    transition: all 0.2s ease-in-out;
+    /* box-shadow: 0px 0px 5px rgb(114, 100, 142),
+    0px 0px 5px #495c90 inset; */
+    /*box-shadow:5px 5px 0px rgb(65, 32, 130) inset,
+    0px 0px 5px #3a0f4e inset;  /* вдавливание*/
+    border: 1px solid black;
+    animation: D3_buton .1s;
+    transform: translateX(2%) translateY(2%);
+}
+@keyframes D3_buton{
+  from { box-shadow: 5px 5px 0px rgb(65, 32, 130);
+  }
+  49% {box-shadow: 0px 0px 0px rgb(65, 32, 130);}
+  50% { box-shadow: 0px 0px 0px rgb(65, 32, 130) inset;}
+  to {
+    box-shadow:5px 5px 0px rgb(65, 32, 130) inset,
+    0px 0px 5px #3a0f4e inset;  /* вдавливание*/
+  }
 }
 .shapka__blocks__item:active{
   transition:1ms;
@@ -317,35 +331,37 @@ a:hover { text-decoration: underline; }
   position: fixed;
   right:30px;
   bottom: 0px;
-  transition: all 1s ease-in-out;
-  overflow: hidden;
+  transition:  1s ease-in-out;
+  z-index:99;
+  
+}
 
-}
-.addit__el{
-  /* transition: all 1s easy-in-out; */
-}
 .additional ul{
   visibility: hidden;
   opacity:0;
-  display: none;
+  /* display: none; */
   padding-right: 5px;
   padding-top: 5px;
-  padding-bottom: 5px;
-  /* transform: scale(0) translateY(-50%); */
+  padding-bottom: 15px;
+  transform: translateY(-100%); 
   background-color: rgb(90, 173, 208);;
   list-style-type: none;
-  transition: all 1s easy-out 1s;
+  transition: 0.25s easy-in-out 0.25s;
+  position: absolute;
+  bottom:0;
+  top:0;
+  height:100%;
 }
-
 .additional:hover{
-    transform: translateY(-50%);
+    transform: translateY(-150%);
 }
 .additional:hover ul{
   visibility: visible;
+  transform: translateY(+75%); 
   opacity: 1;
-  display: block;
-
-  }
+  transition: 0.25s ease-in-out 0.25s,
+  opacity .5s ease-in-out .5s,visibility;
+}
 
 .dungeon{
   background: #51778a;
