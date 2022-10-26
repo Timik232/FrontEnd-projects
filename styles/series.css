@@ -1,7 +1,11 @@
-.flex__elements{
+.series{
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-
-
+  align-items: center;
+  flex-direction: row;
+}
+.series img{
+  height:15vw;
+  min-height:10em;
+  width: auto;
 }
