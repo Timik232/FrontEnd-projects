@@ -70,6 +70,10 @@ a:hover { text-decoration: underline; }
   visibility: hidden;
   opacity: 0%;
 }
+.shapka__blocks__item{
+  width:50%;
+  margin: auto;
+}
   .menu-button-container {
       display: flex;
       z-index: 2;
@@ -330,7 +334,6 @@ a:hover { text-decoration: underline; }
   bottom: 0px;
   transition:  1s ease-in-out;
   z-index:99;
-
 }
 
 .additional ul{
@@ -341,7 +344,7 @@ a:hover { text-decoration: underline; }
   padding-top: 5px;
   padding-bottom: 15px;
   transform: translateY(-100%);
-  background-color: rgb(130, 130, 130);
+  background-color: rgb(132, 119, 194);
   list-style-type: none;
   transition: 0.25s easy-in-out 0.25s;
   position: absolute;
@@ -354,10 +357,26 @@ a:hover { text-decoration: underline; }
 }
 .miniheader {
   z-index: 1;
-  background-color: rgb(62, 47, 98);
+  position: relative;
   /* visibility: hidden; */
   /* opacity: 0; */
 
+}
+.miniheader:before{
+  position: absolute;
+  left:0;
+  top:0;
+  background-color: rgb(47, 58, 98);
+  width: 100%;
+  height:100%;
+  padding-left: 1.48em;
+  /* margin-right: 1.48em; */
+  padding-top: 3em;
+  transform: translateY(-70%);
+  content: '';
+  z-index: -1;
+  opacity:0;
+  transition: 0.3s easy-in-out;
 }
 .additional:hover ul{
   visibility: visible;
@@ -365,6 +384,11 @@ a:hover { text-decoration: underline; }
   opacity: 1;
   transition: 0.25s ease-in-out 0.25s,
   opacity .5s ease-in-out .5s,visibility;
+}
+.additinal:hover .miniheader:before{
+  opacity:1;
+  content:'';
+  transition: 0.3s easy-in-out;
 }
 .additional:hover span{
   opacity: 1;
@@ -397,6 +421,7 @@ a:hover { text-decoration: underline; }
   /* box-shadow: -1px 3px 5px rgb(2, 50, 79); */
   transform: translateY(+20%);
   transition: all 2s easy-in-out;
+  overflow: hidden;
   /* align-items: flex-start; */
 }
 .social__icon:hover{
@@ -412,12 +437,13 @@ a:hover { text-decoration: underline; }
     z-index: 99;
 }
 #insta:before{
-  z-index: 1;
+  z-index: -1;
   background: linear-gradient(180deg,#ffe600,rgba(255,255,255,0) 100%), #ff0073;
   position: absolute;
   content: '';
   height: 90%;
   width: 90%;
+  border-radius: 10px;
   /* transform: translateX(-50%); */
   opacity: 0;
   visibility: hidden;
@@ -425,7 +451,7 @@ a:hover { text-decoration: underline; }
 #insta:hover:before{
 visibility: visible;
 /* opacity:1; */
-animation: 2s to_visible infinite;
+animation: 1.5s to_visible infinite;
 animation-fill-mode: forwards;
 }
 @keyframes to_visible {
@@ -436,14 +462,43 @@ animation-fill-mode: forwards;
   60% { opacity: 70%}
   75% {opacity: 50%;}
   to {opacity: 0;}
-
 }
-#vk_ref:hover{
+#vk_ref:before{
   background: linear-gradient(180deg,#008cff,rgba(255,255,255,0) 100%), #00f0ff;
-  transition: 2s easy-in;
+  z-index: -1;
+  position: absolute;
+  content: '';
+  height: 90%;
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
 }
-#telegram_prof:hover{
+#vk_ref:hover:before{
+  visibility: visible;
+  animation: 1.5s to_visible infinite;
+  animation-fill-mode: forwards;
+}
+#vk_ref:hover img{
+  filter:invert();
+}
+#telegram_prof:before{
   background: linear-gradient(180deg,#81d1ff,rgba(255,255,255,0) 100%), #42d0d9;
+  z-index: -1;
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 0.1em;
+  transform: translateX(-5%);
+}
+#telegram_prof:hover::before{
+  visibility: visible;
+  animation: 1.5s to_visible infinite;
+  animation-fill-mode: forwards;
 }
 #telegram_prof{
   border-radius: 50px;
