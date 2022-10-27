@@ -79,7 +79,8 @@
                       <h1>Контакты</h1>
                       <br>
                       <ul>
-                        <li><adress class="vkid"><a href="https://vk.com/timik232">Страница в социальной сети ВКонтакте: </a></adress></li>
+                        <li><adress class="vkid"><a href="https://vk.com/timik232">Страница ВК </a></adress></li>
+                        <li><a href="https://www.instagram.com/ser13volk/">Инстаграм</a></li>
                         <li>Моя почта: <a href="mailto:komolov.timurka@mail.ru">komolov.timurka@mail.ru</a></li>
                       </ul><br>
                       <div class="color"></div>
@@ -95,15 +96,21 @@
                       </div>
                       <form action="" method="get" class="sendMessage">
                         <fieldset id="send">
-                          <legend id="legsend">Отправить письмо</legend>
-                          <label for="name">Имя и фамилия</label><br>
+                          <legend id="legsend"><h2>Отправить письмо</h2></legend>
+                          <div class="grid__input">
+                          <span class="grid__column">
+                            <label for="name">Имя и фамилия</label>
                           <div class="inp"><input type="text" id="name"  required minlength="3" placeholder="Тимур Комолов"></div>
-                          <label for="mail">Email</label>
+                         <label for="mail">Email</label>
                           <div class="inp"><input type="email" name="mail" id="mail" placeholder="komolov.timurka@mail.ru" required minlength="4"></div>
-                          <label for="phone">Номер телефона(необязательно):</label>
+                        </span>
+                          <span class="grid__column">
+                            <label for="phone">Номер телефона(необязательно):</label>
                           <div class="inp"><input type="tel" name="phone" id="phone" placeholder="+7-900-000-00-00"></div>
                           <label for="vk">Ссылка на вк (необязательно):</label>
                           <div class="inp"><input type="url" name="vk" id="vk" placeholder="https://vk.com/timik232"></div>
+                        </span>
+                        </div>
                           <label for="tovk">Отвечать в вк?   </label>
                           <input type="checkbox" name="tovk" id="tovk"><br>
                           <label for="message">Сообщение</label>
