@@ -45,6 +45,7 @@ font-style: italic;
 #tovk{
   margin-left: 1em;
   background: linear-gradient(to top, rgb(194, 242, 255,0.8), rgb(233, 245, 255,0.8));
+  cursor: pointer;
 }
 #name {
   color:black;
@@ -91,6 +92,7 @@ font-style: italic;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   font-weight: 600;
   font-family: "Lucida Console";
+  cursor:pointer;
   /* max-width: 30vw; */
 }
 #topic option{
@@ -142,7 +144,7 @@ fieldset{
   border-radius: 10em;
   z-index: 2;
   display:block;
-  
+
 }
 .sendMessage input{
   border-radius: 10px;
@@ -156,6 +158,9 @@ fieldset{
   margin-bottom: 1em;
   font-family: "Lucida Console";
   outline:none;
+}
+.sendMessage input:hover, #message:hover, #tovk:hover,button:hover{
+  background: rgba(255, 255, 255, 0.8);
 }
 .sendMessage label{
   white-space: nowrap;
@@ -174,7 +179,6 @@ fieldset{
   grid-row-gap:1em;
   min-width:50%;
   margin: auto;
-
 }
 .box{
   position: relative;
