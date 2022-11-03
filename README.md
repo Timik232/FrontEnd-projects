@@ -1,3 +1,2 @@
-# FrontEnd-projects
-for RTU MIREA
-Здесь будет сайт с моим портфолио как фотографа для задач дисциплины "Разработки клиентской части" 
+# Timik232.github.io
+photographer portfolio website
