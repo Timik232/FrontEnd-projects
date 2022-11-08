@@ -3,13 +3,10 @@ let like = document.getElementById("like");
 let login = document.getElementById('tolog')
 let admin = document.getElementById('admin')
 
-function getPosition(e){
-	var x = y = 0;
-
-	if (!e) {
-		var e = window.event;
-	}
-
+function getPosition(){
+	let x = 0;
+  let y = 0;
+  let e = window.event;
 	if (e.pageX || e.pageY){
 		x = e.pageX;
 		y = e.pageY;
@@ -17,22 +14,19 @@ function getPosition(e){
 		x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 	}
-
 	return {x: x, y: y}
 }
 
-function spamming(e){
-    function(e){
-  	var coord = getPosition(e);
-  	console.log(coord.x + "," + coord.y);
-  });
+function spamming(){
+  	var coord = getPosition();
+  	document.body.fillText("❤",coord.x,coord.y);
 }
 
 like.addEventListener("click", () => {
   if (like.style.backgroundColor == "azure"){
     like.style.backgroundColor = "rgb(21, 200, 5)";
     like.style.color = "rgb(144, 8, 157)";
-    document.body.addEventListener("mousemove",spamming(e));
+    document.body.addEventListener("mousemove",spamming);
   }
   else{
     document.body.removeEventListener("mousemove",spamming);
