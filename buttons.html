@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <link rel="icon" href="https://cdn.icon-icons.com/icons2/753/PNG/512/photo-camera-1_icon-icons.com_63898.png" sizes="any">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Oswald&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/buttons.css">
   </head>
   <body>
@@ -14,7 +14,7 @@
     <header class="toback">
         <div class="container">
             <div class="center">
-              <a href="index.html">
+              <a href="main.html">
               <button class="mainbtn">
                 <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                   <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
@@ -33,10 +33,45 @@
             <a href="#" class="btn btn-notgotit">Не принято</a>
             <a href="#" class="btn btn-pulse">Пульсируй</a>
             <a href="#" class="btn btn-notpulse">Не пульсируй</a>
-            <a href="#" class="good-btn"> Красиво </a>  
-          </div>
+            <a href="#" class="good-btn"> Красиво </a>
 
+            <button id="like">❤</button>
+            <button id="tolog">Log in</button>
+            <button id="admin">Admin panel</button>
+          </div>
+          <div class="lines-elements">
+
+            <button class="defen">
+              <svg  viewBox="0 0 200 100" height='100' width='200'
+                 class="border1">
+              <polyline points="199,1 199,99 1,99 1,1 199,1" class="bg-line" />
+              <svg  viewBox="0 0 200 100" height='100' width='200'
+                 class="border2">
+              <polyline points="199,1 199,99 1,99 1,1 199,1" class="hl-line" />
+            </svg>
+              <p>some text</p>
+            </button>
+            <button class="defen">
+              <svg  viewBox="0 0 200 100" height='100' width='200'
+                 class="border1" id="border1-col">
+              <polyline points="199,1 199,99 1,99 1,1 199,1" class="bg-line" />
+              <svg  viewBox="0 0 200 100" height='100' width='200'
+                 class="border2"  id="border2-col">
+              <polyline points="199,1 199,99 1,99 1,1 199,1" class="hl-line" />
+              <p>got some text</p></button>
+            <button class="defen">
+              <svg  viewBox="0 0 200 100" height='100' width='200'
+                 class="border1" id="border3-col">
+              <polyline points="199,1 199,99 1,99 1,1 199,1" class="bg-line" />
+              <svg  viewBox="0 0 200 100" height='100' width='200'
+                 class="border2" id="border4-col">
+              <polyline points="199,1 199,99 1,99 1,1 199,1" class="hl-line" />
+              <p>delete some text</p></button>
+          </div>
       </div>
+      <label for="login">login:</label>
+      <input type="url" name="login" id="login" placeholder="login">
+      <script src="js/login.js"></script>
         </main>
     </div>
   </body>
