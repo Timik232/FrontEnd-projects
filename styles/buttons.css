@@ -251,6 +251,7 @@
     text-align: center;
     background-color: azure;
     color: rgb(152, 217, 255);
+    z-index: 99;
     transition: 0.2s ease-in-out;
   }
   #tolog{

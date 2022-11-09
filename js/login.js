@@ -17,9 +17,40 @@ function getPosition(){
 	return {x: x, y: y}
 }
 
+var count = 0;
+var toDelete = 0;
+var spawnTime = 0;
+let date = new Date();
+var liveTime = 0;
+
 function spamming(){
-  	var coord = getPosition();
-  	document.body.fillText("❤",coord.x,coord.y);
+		let date = new Date();
+    let time = date.getMilliseconds() + date.getSeconds() * 1000;
+		if (liveTime == 0){
+			 liveTime = time;
+		 }
+		if ((time - spawnTime) > 50){
+			spawnTime = time;
+		  count+=1;
+	  	var coord = getPosition();
+			let div = document.createElement("div");
+			div.id = "Div" + count;
+			div.appendChild(document.createTextNode("❤"));
+			div.style.position = "absolute";
+			div.style.left = coord.x+'px';
+			div.style.top = coord.y+'px';
+			div.style.content = "❤";
+			document.body.appendChild(div);
+			if ((time-liveTime) > 300){
+				liveTime = time;
+				let el = document.getElementById("Div" + toDelete);
+				toDelete+=1;
+				if (el){
+				document.body.removeChild(el);
+				}
+			}
+	}
+
 }
 
 like.addEventListener("click", () => {
