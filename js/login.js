@@ -50,7 +50,6 @@ function spamming(){
 				}
 			}
 	}
-
 }
 
 like.addEventListener("click", () => {
