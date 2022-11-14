@@ -6,7 +6,7 @@
     }
     .flex-buttons{
       display: grid;
-      grid-template-columns: repeat(1,1fr);
+      grid-template-columns: repeat(4,1fr);
       grid-column-gap:2em;
       grid-row-gap:1em;
       margin: auto;
@@ -264,7 +264,7 @@
     transition: 0.2 ease-in-out;
   }
   #like:hover, #tolog:hover{
-    box-shadow: 5px -5px 2px rgb(83, 113, 158),
+    box-shadow: 5px -5px 10px rgb(83, 113, 158),
     5px -5px 2px 10em rgb(242, 62, 117,0.1) inset;
   }
   #admin{
@@ -290,3 +290,49 @@
       5px -5px 2px rgb(201, 3, 3,0.3) inset;
     }
   }
+  #capcha{
+    margin-left: 1em;
+    padding:0.5em;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(67, 189, 119);
+    color:azure;
+    transition: 0.2 ease-in-out;
+  }
+  #capcha:hover{
+    box-shadow: 5px -5px 10px rgb(53, 111, 92),
+    5px -5px 2px 10em rgb(242, 62, 117,0.1) inset;
+  }
+
+#add__value{
+  margin-left: 1em;
+  padding:0.5em;
+  cursor: default;
+  text-align: center;
+  background-color: rgb(67, 189, 119);
+  color:azure;
+}
+#create__value{
+  margin-left: 1em;
+  padding:0.5em;
+  cursor: pointer;
+  text-align: center;
+  background-color: rgb(193, 133, 16);
+  color:azure;
+}
+#create__value:hover{
+  box-shadow: 5px -5px 10px rgb(103, 111, 53),
+  5px -5px 2px 10em rgb(242, 62, 117,0.1) inset;
+}
+#add__value:hover{
+  box-shadow: 5px -5px 10px rgb(103, 111, 53),
+  5px -5px 2px 10em rgb(242, 62, 117,0.1) inset;
+}
+#verylongtext{
+  margin-left: 1em;
+  padding:0.5em;
+  cursor: default;
+  text-align: center;
+  background-color: rgb(197, 254, 5);
+  color:rgb(75, 14, 252);
+}
