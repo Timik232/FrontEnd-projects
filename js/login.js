@@ -5,6 +5,9 @@ let admin = document.getElementById('admin');
 let capcha = document.getElementById('capcha');
 let create = document.getElementById('create__value');
 let addto = document.getElementById('add__value');
+let stop = document.getElementById('stop');
+let sort = document.getElementById('sort');
+let filter = document.getElementById('filter');
 
 function getPosition(){
 	let x = 0;
@@ -178,3 +181,121 @@ function truncate(str,maxlength){
 }
 let verylong = document.getElementById('verylongtext');
 verylong.textContent = truncate(verylong.textContent,8);
+
+function addNotif(){
+	let notif = document.getElementById('notif');
+	let val = Number(notif.innerHTML);
+	val+=1;
+	notif.innerHTML = val;
+}
+
+let timerID = setInterval(addNotif, 3000);
+
+function timerGO()
+{
+		timerID = setInterval(addNotif, 3000);
+}
+
+stop.addEventListener("click", () => {
+ clearInterval(timerID);
+ alert("На 10 секунд уведомления выключены");
+ setTimeout(timerGO,10000);
+})
+
+let items = [];
+let blocks = [];
+
+let htmlItems = document.querySelector(".trash");
+
+items.push("фотосессия");
+items.push("предметная съёмка");
+items.push("портретная съёмка");
+for (let i = 0; i < 3; i++)
+{
+	blocks.push([`
+	<div class="trash__el el${i}">
+		<div class="trash__text trash__text${i}">${items[i]}
+		</div>`,
+		`<div class="trash__cost trash__cost${i}"> ${Math.ceil(Math.random()*1000)}
+		</div>`,
+		`<div class="add__el"><span class="amount__el amount__el${i}">0</span><span class="plus plus${i}">+</span>
+		</div>`,
+		`<div class="clear"><img src="images/trash.svg" alt="trash" height=32px class="clear__this">
+		</div>
+	</div>
+	`]);
+	htmlItems.innerHTML += blocks[i].join("");
+}
+
+
+
+let plus = document.querySelectorAll(".plus");
+
+for (let i = 0; i < 3; i++){
+	plus[i].addEventListener("click", () => {
+		let el = document.querySelector(`.amount__el${i}`);
+		el.innerHTML = Number(el.innerHTML) + 1;
+		let cost = document.querySelector(`.trash__cost${i}`).innerHTML;
+		let result = document.getElementById('result');
+		result.innerHTML = Number(result.innerHTML) + Number(cost);
+		//blocks[i][2] = blocks[i][2].splice(indexOf(i)+2,indexOf(`</span><span class="plus`),el.innerHTML);
+		//console.log(blocks[i][2]);
+	})
+}
+
+let trash = document.querySelectorAll(".clear__this");
+trash[0].addEventListener("click", () => {
+	document.getElementById("more").value = "";
+	document.getElementById("less").value = "";
+	document.getElementById('result').innerHTML = 0;
+	for (let i = 0; i < 3; i++){
+		document.querySelector(`.amount__el${i}`).innerHTML = 0;
+	}
+});
+for (let i = 1; i < 4; i++){
+		trash[i].addEventListener("click", () => {
+			let el = document.querySelector(`.amount__el${i-1}`);
+			let cost = document.querySelector(`.trash__cost${i-1}`).innerHTML;
+			let result = document.getElementById('result');
+			result.innerHTML = Number(result.innerHTML) - el.innerHTML * cost;
+			el.innerHTML = 0;
+	})
+};
+
+
+let sortTact = 0;
+function sortButton() {
+	let position = [];
+	for (let i = 0; i < 3; i++)	{
+		blocks[i][1].splice(indexOf(i+2),indexOf("</span><span class")
+	}
+	for (let j = 2; i > 0; j--){
+		for (let i = 0; i < j; i++){
+			if (blocks[i][1].splice(indexOf(i+2),indexOf("</span><span class")))
+		}
+	}
+};
+
+
+
+function filterButton() {
+	let more = Number(document.getElementById("more").value);
+	console.log(more);
+	let less = Number(document.getElementById("less").value);
+	let elements = [];
+	let cost;
+	let name;
+	for (let i = 0; i < 3; i++){
+		cost = document.querySelector(`.trash__cost${i}`).textContent;
+		name = document.querySelector(`.trash__text${i}`).textContent;
+		if (Number(cost) >= more && Number(cost) <= less){
+			elements.push(name.trim() + " " + cost.trim());
+	}
+	}
+	if (elements.length == 0){
+		alert("Ничего не подходит")
+	}
+	else {
+		alert("Подходят следующие услуги:\n" + elements.join("\n"));
+}
+}

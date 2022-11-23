@@ -81,9 +81,7 @@ font-style: italic;
 #topic{
   color:black;
   min-width:15vw;
-  border-right: 1px solid rgba(255,255,255,0.2);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
   /* background: linear-gradient(to top, rgb(194, 242, 255,0.8), rgb(233, 245, 255,0.8)); */
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.3);
