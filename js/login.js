@@ -275,6 +275,7 @@ function sortButton() {
 	}
 	for (let j = 2; j > 0; j--){
 		for (let i = 0; i < j; i++){
+			if (sortTact%2 == 0){
 			if (to_sort[i] > to_sort[i + 1]) {
         let temp = to_sort[i];
         to_sort[i] = to_sort[i + 1];
@@ -287,12 +288,24 @@ function sortButton() {
         blocks[i + 1] = temp;*/
 		}
 	}
+	else {
+		if (to_sort[i] < to_sort[i + 1]) {
+			let temp = to_sort[i];
+			to_sort[i] = to_sort[i + 1];
+			to_sort[i + 1] = temp;
+			temp = names[i];
+			names[i] = names[i+1];
+			names[i + 1] = temp;
+	}
+	}
  }
+}
  let result = "";
  for (let i = 0; i < 3; i++){
 	 result += names[i].trim() + " " + to_sort[i].trim() + "\n";
  }
  alert("Отсортированный список:\n" + result);
+ sortTact+=1;
  /*let inner = htmlItems.innerHTML;
  inner = inner.slice(inner.indexOf(`<div class="trash__el el0">`), inner.indexOf("<br>") + 3);
  htmlItems.innerHTML = htmlItems.innerHTML.replace(inner,"");
