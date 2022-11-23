@@ -226,6 +226,7 @@ for (let i = 0; i < 3; i++)
 	`]);
 	htmlItems.innerHTML += blocks[i].join("");
 }
+htmlItems.innerHTML += "<br>";
 
 
 
@@ -265,16 +266,40 @@ for (let i = 1; i < 4; i++){
 
 let sortTact = 0;
 function sortButton() {
-	let position = [];
+	//let position = [];
+	let to_sort = [];
+	let names = [];
 	for (let i = 0; i < 3; i++)	{
-		blocks[i][1].splice(indexOf(i+2),indexOf("</span><span class")
+		to_sort.push(blocks[i][1].slice(blocks[i][1].indexOf(i)+3,blocks[i][1].indexOf("</div>")));
+		names.push(document.querySelector(`.trash__text${i}`).textContent);
 	}
-	for (let j = 2; i > 0; j--){
+	for (let j = 2; j > 0; j--){
 		for (let i = 0; i < j; i++){
-			if (blocks[i][1].splice(indexOf(i+2),indexOf("</span><span class")))
+			if (to_sort[i] > to_sort[i + 1]) {
+        let temp = to_sort[i];
+        to_sort[i] = to_sort[i + 1];
+        to_sort[i + 1] = temp;
+				temp = names[i];
+				names[i] = names[i+1];
+				names[i + 1] = temp;
+				/*temp = blocks[i];
+				blocks[i] = blocks[i + 1];
+        blocks[i + 1] = temp;*/
 		}
 	}
-};
+ }
+ let result = "";
+ for (let i = 0; i < 3; i++){
+	 result += names[i].trim() + " " + to_sort[i].trim() + "\n";
+ }
+ alert("Отсортированный список:\n" + result);
+ /*let inner = htmlItems.innerHTML;
+ inner = inner.slice(inner.indexOf(`<div class="trash__el el0">`), inner.indexOf("<br>") + 3);
+ htmlItems.innerHTML = htmlItems.innerHTML.replace(inner,"");
+for (let i = 0; i < 3; i++){
+ 	htmlItems.innerHTML += blocks[i].join("");
+}*/
+}
 
 
 
