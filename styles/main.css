@@ -149,6 +149,7 @@ a:hover { text-decoration: underline; }
   }
 }
 .elements{
+  
     /* flex-flow: row nowrap; */
     list-style-type: none;
     /* justify-content:space-between; */
