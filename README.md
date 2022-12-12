@@ -1,2 +1,1 @@
-# Timik232.github.io
-photographer portfolio website
+Different tasks for FrontEnd lessons in RTU MIREA
