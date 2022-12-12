@@ -261,10 +261,10 @@ a:hover { text-decoration: underline; }
 }
 
 .to__hover{
-    /* display: block; */
-    /* position: fixed; */
+    display: block;
+    position: fixed;
     right:30px;
-    /* bottom: 30px; */
+    bottom: 30px;
     transition:  1s ease-in-out;
     z-index:2;
     border-top-left-radius: 2em;
@@ -311,10 +311,10 @@ a:hover { text-decoration: underline; }
 }
 .additional{
   /* display: block; */
-  /* position: sticky; */
+  position: fixed;
   float:right;
   right:30px;
-  bottom: 0px;
+  bottom: -30px;
   transition:  1s ease-in-out;
   z-index:97;
   border-top-left-radius: 2em;

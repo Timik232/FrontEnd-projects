@@ -337,3 +337,190 @@ function filterButton() {
 		alert("Подходят следующие услуги:\n" + elements.join("\n"));
 }
 }
+let hrref = document.querySelectorAll(".changecolor");
+for (let hr of hrref){
+	hr.style.color = "red";
+}
+
+let addlist = document.querySelector(".addlist");
+addlist.addEventListener("click", () => {
+	while(true)
+	{
+		let text = prompt("Введите элемент списка");
+		let ul = document.querySelector(".list-to-add");
+		if (!text) {
+	    break;
+	  }
+		 let elem = document.createElement("li");
+		 elem.innerText = text;
+		 ul.appendChild(elem);
+	}
+});
+
+let i = 1;
+let showAlert = document.getElementById("show-notif");
+showAlert.addEventListener ("click", e => {
+    let elem = document.createElement("li");
+    elem.className = "notification";
+    let text = document.createElement("p");
+    text.innerText = "Новое уведомление " + i;
+		i++;
+    elem.appendChild(text);
+    document.getElementById("notif-container").appendChild(elem);
+    addAlert ("Уведомление");
+    setTimeout (() => {
+        elem.classList.add("notification-shown");
+    }, 0);
+    setTimeout (() => {
+        elem.classList.remove("notification-shown");
+    }, 2000);
+    setTimeout (() => {
+        elem.remove();
+    }, 2500)
+})
+
+function addAlert (text) {
+    let item = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = "x";
+    button.className = "del"
+    item.innerText = text;
+    item.appendChild(button);
+    document.getElementById('notif-list').appendChild(item);
+    document.getElementById('notif-count').innerHTML++;
+}
+
+let alertList = document.getElementById("notif-list");
+alertList.addEventListener ("click", e => {
+    if (e.target.className == "del") {
+        e.target.parentElement.remove();
+        document.getElementById("notif-count").innerText--;
+    }
+})
+let cent = document.getElementById("image-center");
+
+function res(){
+    cent.style.marginLeft = ((window.innerWidth - cent.clientWidth) / 2).toString()+"px";
+    cent.style.marginTop = ((window.innerHeight - cent.clientHeight) / 2).toString()+"px";
+}
+setInterval(res, 100);
+
+let contents = document.querySelector(".prevent-content");
+contents.addEventListener ("click", e => {
+    if (e.target.tagName == "A") {
+        if (!confirm("Вы уверены, что хотите перейти по ссылке?")) {
+            e.preventDefault();
+        }
+    }
+});
+
+let cursor = document.getElementById("vert-line");
+cursor.addEventListener("mousedown", e => {
+    e.preventDefault();
+    let line = document.getElementById("line");
+    let width = parseFloat(getComputedStyle(cursor).width);
+    let lineBegin = line.getBoundingClientRect().x;
+    document.onmousemove = e => {
+        if (e.pageX > lineBegin - width / 2 && e.pageX < parseFloat(getComputedStyle(line).width) + lineBegin - width / 2) {
+            cursor.style.left = e.pageX + - lineBegin + "px";
+        }
+    }
+    document.onmouseup = e => {
+        document.onmousemove = null;
+    }
+})
+
+let cost = 0;
+let shop = document.getElementById("market");
+let cartList = document.getElementById("cart-list");
+let costElem = document.getElementById("cost");
+shop.addEventListener("mousedown", e => {
+    e.preventDefault();
+    let item = e.target;
+    if (item.tagName == "LI") {
+        let movingItem = document.createElement("li");
+        movingItem.innerHTML = item.innerHTML;
+        movingItem.classList.toggle("moving");
+				  movingItem.style["list-style-type"] = "none";
+        document.body.appendChild (movingItem);
+
+        document.onmousemove = e => {
+            movingItem.style.top = e.clientY + "px";
+            movingItem.style.left = e.clientX + "px";
+        }
+
+        document.onmouseup = e => {
+            movingItem.hidden = true;
+            let elemBellow = document.elementFromPoint(e.clientX, e.clientY);
+            if (elemBellow.id == "cart" || elemBellow.id == "cart-list" || elemBellow.parentNode.id == "cart-list") {
+                cartList.appendChild (movingItem);
+                movingItem.hidden = false;
+                movingItem.classList.toggle("moving");
+                cost += +movingItem.innerText.split(" ")[1];
+                costElem.innerText = "Стоимость: " + cost;
+            } else {
+                movingItem.remove();
+            }
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+})
+
+let camera = document.getElementById("camera");
+let start = performance.now();
+function animateCamera (time) {
+    let duration = 10000;
+    let timeFraction = (time - start) % duration / duration;
+    if (timeFraction < 0.5) {
+        camera.style.left = timeFraction * 180 + "%";
+        //camera.style.transform = "scaleX(1)";
+    } else {
+        camera.style.left = (1 - timeFraction) * 180 + "%";
+        //camera.style.transform = "scaleX(-1)";
+    }
+    if (timeFraction > 1) timeFraction = 1;
+    requestAnimationFrame(animateCamera);
+}
+requestAnimationFrame(animateCamera);
+
+
+let randomStart = performance.now();
+let rand = Math.random();
+let randomMax = rand * 180;
+let randomCamera = document.getElementById("random-camera");
+let randomDuration = rand * 10000;
+let last;
+let lastTime = performance.now();
+
+function animateRandomCamera (time) {
+    let timeFraction = (time - randomStart) % randomDuration / randomDuration;
+    if (timeFraction < 0.5) {
+        if (!last) {
+            rand = Math.random();
+            randomMax = rand * 180;
+            randomDuration = rand * 10000;
+            randomStart = performance.now();
+            //console.log(rand);
+        }
+        last = true;
+        randomCamera.style.left = timeFraction * randomMax + "%";
+        //randomCamera.style.transform = "scaleX(1)";
+    } else if (timeFraction > 0.5 && timeFraction < 0.53) {
+			let contain = document.getElementById("random-camera-container");
+			contain.style.background = "white";
+			contain.style.filter = "blur(30px)";
+			setTimeout (() => {
+	        contain.style.background = "transparent"
+					contain.style.filter = "blur(0px)";
+	    }, 100);
+		}
+		else {
+        last = false;
+        randomCamera.style.left = (1 - timeFraction) * randomMax + "%";
+        //randomCamera.style.transform = "scaleX(-1)";
+    }
+    if (timeFraction > 1) timeFraction = 1;
+    requestAnimationFrame(animateRandomCamera);
+}
+requestAnimationFrame(animateRandomCamera);

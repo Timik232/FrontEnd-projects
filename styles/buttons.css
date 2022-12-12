@@ -426,6 +426,211 @@
   font-size: 1.5em;
   margin-left: 1em;
 }
+.addlist{
+  border: 1px solid black;
+  color: black;
+  padding: 1em;
+  cursor: pointer;
+}
+.addlist:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3) inset;
+}
+#notif{
+  margin: 1em;
+  position: fixed;
+  display: block;
+  bottom: 20px;
+  right: 20px;
+  float: right;
+  padding: 0.5em;
+  /* overflow: hidden; */
+  background: rgb(151, 210, 40);
+  border-radius: 1.5em;
+  transition: height .5s .25s, width .25s;
+  transition: .5s;
+}
+#notif-list > li {
+    margin: .0em 0 0 0;
+    overflow-wrap: break-word;
+    padding: .75em 0 .75em 0;
+}
+#notif-list > li::before {
+    content: counter(list-item);
+    margin: 1em;
+    padding: .5em .8em;
+    background-color: wheat;
+    border-radius: 2em;
+}
+#notif-image{
+  border-radius: 1.5em;
+}
+#notif-count{
+  margin: 0;
+    position: absolute;
+    top: -0.3em;
+    right: -0.2em;
+    background-color: rgb(255, 46, 0);
+    width: 1.25em;
+    height: 1.25em;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+}
+#show-notif{
+  margin-top: 0.5em;
+  background: rgb(131, 60, 161);
+  padding: 0.5em;
+  cursor: pointer;
+}
+#show-notif:hover{
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3) inset;
+}
+#notif-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 4em;
+    right: -1em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 11em;
+    transition: 0.5s;
+}
+#notif-list{
+    display: none;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 82%;
+    background-color: rgb(142, 142, 142);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 1.5em 1.55em;
+}
+#notif:hover > #notif-circle {
+    border-radius: 1.75em 1.75em 0 0;
+}
+#notif:hover {
+    width: 15em;
+    height: 20em;
+    transition: .5s ease-in-out;
+}
+#notif:hover > ul {
+    display: flex;
+}
+#notif:hover > #notif-container {
+    opacity: 0;
+}
+#notif-list > li:hover {
+    border-radius: 1em;
+    background-color: rgb(39, 166, 184);
+    transform: scale(105%);
+}
+#notif-list > li:hover::before {
+    background-color: rgb(38, 175, 134);
+}
+#notif-list::-webkit-scrollbar {
+    width: 0px;
+}
+.notification {
+    background: rgb(68, 98, 207);
+    border-radius: 0.5em;
+    opacity: 0;
+    transition: .5s;
+    margin: 0.5em;
+}
+.notification > p {
+    margin: 0.5em;
+}
+.notification-shown {
+    opacity: 1;
+    margin-bottom: .5em;
+}
+.del {
+    float: right;
+    background: none;
+    border: none;
+    margin-right: 1em;;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+#image-center{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 20;
+  margin-left: 290px;
+  margin-top: 401.5px;
+}
+#slider {
+    border-radius: 1em;
+    position: relative;
+    height: 2.5vw;
+    background: rgb(5, 0, 92);
+}
+#line {
+    position: relative;
+    display: inline-block;
+    height: 0.5vw;
+    width: 70vw;
+    margin: 1vw 1.5vw;
+    background: rgb(0, 137, 156);
+}
+#vert-line {
+  content: ' ';
+    display: inline-block;
+    position: absolute;
+    left: 2vw;
+    top: -0.75vw;
+    height: 2vw;
+    width: 1vw;
+    border-radius: 1em;
+    background: rgb(255, 0, 122);
+}
+#market-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart{
+  background: rgb(87, 189, 250);
+  padding-top: 0.5em;
+  border-radius: 1em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+#cost{
+  color:rgb(189, 0, 0);
+}
+.moving {
+    position: fixed;
+}
+h3 {
+  color: azure;
+  margin-bottom: 0.2em;
+}
+#camera-container {
+    position: relative;
+}
+#camera {
+    position: relative;
+    left: 90%;
+    width: 10vw;
+}
+
+#random-camera-container {
+    position: relative;
+    border-radius: 2em;
+}
+#random-camera {
+    position: relative;
+    left: 90%;
+    width: 10vw;
+}
+#camerafly img{
+  filter:invert();
+}
 @media screen and (max-width:800px){
   .flex-buttons{
     grid-template-columns: repeat(1,1fr);
